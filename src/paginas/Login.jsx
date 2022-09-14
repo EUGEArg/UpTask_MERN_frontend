@@ -42,7 +42,7 @@ const Login = () => {
 				<Link
 					className="block text-center my-5 text-slate-500 text-sm uppercase"
 					to="/registrar"
-				>No tienes una cuenta? <spam className="text-sky-500">Regístrate</spam></Link>
+				>No tienes una cuenta? <span className="text-sky-500">Regístrate</span></Link>
 				<Link
 					className="block text-center my-5 text-slate-500 text-sm uppercase"
 					to="/olvide-password"
