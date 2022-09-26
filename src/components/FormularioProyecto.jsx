@@ -62,14 +62,14 @@ const FormularioProyecto = () => {
 
             <div className='mb-5'>
                 <label
-                    className='text-gray-700 uppercase font-bold text-sm'
+                    className='text-slate-700 uppercase font-bold text-sm'
                     htmlFor='nombre'
                 >Nombre Proyecto
                 </label>
                 <input
                     id='nombre'
                     type='text'
-                    className='border w-full p-2 mt-2 placeholder-gray-400 rounded-md'
+                    className='border w-full p-2 mt-2 placeholder-slate-400 rounded-md'
                     placeholder='Nombre del Proyecto'
                     value={nombre}
                     onChange={e=> setNombre(e.target.value)}
@@ -78,13 +78,13 @@ const FormularioProyecto = () => {
 
             <div className='mb-5'>
                 <label
-                    className='text-gray-700 uppercase font-bold text-sm'
+                    className='text-slate-700 uppercase font-bold text-sm'
                     htmlFor='description'
                 >Descripción
                 </label>
                 <textarea
                     id='description'
-                    className='border w-full p-2 mt-2 placeholder-gray-400 rounded-md'
+                    className='border w-full p-2 mt-2 placeholder-slate-400 rounded-md'
                     placeholder='Descripción del Proyecto'
                     value={description}
                     onChange={e=> setDescription(e.target.value)}
@@ -93,14 +93,14 @@ const FormularioProyecto = () => {
 
             <div className='mb-5'>
                 <label
-                    className='text-gray-700 uppercase font-bold text-sm'
+                    className='text-slate-700 uppercase font-bold text-sm'
                     htmlFor='fecha-entrega'
                 >Fecha Entrega
                 </label>
                 <input
                     id='fecha-entrega'
                     type='date'
-                    className='border w-full p-2 mt-2 placeholder-gray-400 rounded-md'
+                    className='border w-full p-2 mt-2 placeholder-slate-400 rounded-md'
                     value={fechaEntrega}
                     onChange={e=> setFechaEntrega(e.target.value)}
                 />
@@ -108,14 +108,14 @@ const FormularioProyecto = () => {
 
             <div className='mb-5'>
                 <label
-                    className='text-gray-700 uppercase font-bold text-sm'
+                    className='text-slate-700 uppercase font-bold text-sm'
                     htmlFor='nombre-cliente'
                 >Nombre Cliente
                 </label>
                 <input
                     id='nombre-cliente'
                     type='text'
-                    className='border w-full p-2 mt-2 placeholder-gray-400 rounded-md'
+                    className='border w-full p-2 mt-2 placeholder-slate-400 rounded-md'
                     placeholder='Nombre del Cliente'
                     value={cliente}
                     onChange={e=> setCliente(e.target.value)}
@@ -124,7 +124,7 @@ const FormularioProyecto = () => {
             <input
                 type='submit'
                 value={id ? 'Actualizar Proyecto' : 'Crear Proyecto'}
-                className='bg-blue-400 w-full p-3 uppercase font-bold text-white text-center rounded cursor-pointer hover:bg-blue-600 transition-colors'
+                className='bg-blue-400 hover:bg-blue-500 transition-colors w-full p-3 uppercase font-bold text-white text-center rounded cursor-pointer '
             />
 
         </form>

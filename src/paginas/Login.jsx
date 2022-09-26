@@ -46,11 +46,12 @@ const Login = () => {
 
 	return (
 		<>
-			<h1 className='text-zinc-500 font-black text-4xl capitalize text-center'>Gestiona los 
+			<h1 className="text-pink-600 font-black text-5xl mb-6 text-center capitalize">UpTask</h1>
+			<h2 className='text-slate-500 font-black text-4xl capitalize text-center'>Gestiona los 
 				<span className='text-blue-500'> proyectos</span> de tu 
 				<span className='text-blue-500'> equipo</span> desde cualquier 
 				<span className='text-blue-500'> lugar</span>
-			</h1>
+			</h2>
 
 			{msg && <Alerta alerta={alerta} />}
 
@@ -60,28 +61,28 @@ const Login = () => {
 			>
 				<div className="my-5">
 					<label
-						className="uppercase text-gray-600 block text-xl font-bold"
+						className="uppercase text-slate-600 block text-xl font-bold"
 						htmlFor="email"
 					>Email</label>
 					<input
 						id="email"
 						type="email"
 						placeholder="Email de Registro"
-						className="w-full mb-5 p-3 border rounded-xl bg-gray-100"
+						className="w-full mb-5 p-3 border rounded-xl bg-slate-100"
 						value={email}
 						onChange={e => setEmail(e.target.value)}
 					/>
 				</div>
 				<div className="my-5">
 					<label
-						className="uppercase text-gray-600 block text-xl font-bold"
+						className="uppercase text-slate-600 block text-xl font-bold"
 						htmlFor="email"
 					>Password</label>
 					<input
 						id="password"
 						type="password"
 						placeholder="Password de Registro"
-						className="w-full mb-5 p-3 border rounded-xl bg-gray-100"
+						className="w-full mb-5 p-3 border rounded-xl bg-slate-100"
 						value={password}
 						onChange={e => setPassword(e.target.value)}
 					/>
@@ -89,8 +90,8 @@ const Login = () => {
 				<input
 					type="submit"
 					value="Iniciar Sesión"
-					className="bg-blue-600 w-full py-3 mt-4 text-white uppercase font-bold rounded
-					hover:cursor-pointer hover:bg-blue-700 transition-colors"
+					className="bg-blue-500 w-full py-3 mt-4 text-white uppercase font-bold rounded
+					hover:cursor-pointer hover:bg-blue-600 transition-colors"
 				/>
 			</form>
 

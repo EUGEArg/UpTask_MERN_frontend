@@ -1,40 +1,45 @@
 import { formatearFecha } from "../helpers/formatearFecha"
 import useProyectos from "../hooks/useProyectos"
+import useAdmin from "../hooks/useAdmin"
 
 const Tarea = ({ tarea }) => {
 
-    const {handleModalEditarTarea, handleModalEliminarTarea} = useProyectos()
+    const {handleModalEditarTarea, handleModalEliminarTarea, completarTarea} = useProyectos()
+    const admin = useAdmin()
 
     const { nombre, description, fechaEntrega, prioridad, estado, _id } = tarea
 
 
     return (
         <div className="border-b p-5 flex justify-between items-center">
-            <div>
+            <div className="flex flex-col items-start">
                 <p className="mb-2 text-xl">{nombre}</p>
-                <p className="mb-2 text-sm text-gray-500 uppercase">{description}</p>
+                <p className="mb-2 text-sm text-slate-500 uppercase">{description}</p>
                 <p className="mb-2 text-sm">{formatearFecha(fechaEntrega)}</p>
-                <p className="mb-2 text-gray-600">Prioridad: {prioridad}</p>
+                <p className="mb-2 text-slate-600">Prioridad: {prioridad}</p>
+                { estado && <p className="p-1 bg-green-500 rounded-lg text-sm  text-white uppercase font-bold">Completada por: {tarea.completado.nombre}</p>}
             </div>
-            <div className="flex gap-2">
-                <button
-                    className="bg-indigo-400 p-2 rounded-lg uppercase text-white font-bold text-sm"
-                    onClick={() => handleModalEditarTarea(tarea)}
-                >Editar</button>
+            <div className="flex flex-col lg:flex-row gap-2">
 
-                {estado ? (
+                {admin && (
                     <button
-                        className="bg-lime-500 p-2 rounded-lg uppercase text-white font-bold text-sm"
-                    >Completa</button>
-                ) : (
-                    <button
-                        className="bg-slate-400 p-2 rounded-lg uppercase text-white font-bold text-sm"
-                    >Incompleta</button>
+                        className="bg-indigo-400 p-2 rounded-lg uppercase text-white font-bold text-sm"
+                        onClick={() => handleModalEditarTarea(tarea)}
+                    >Editar</button>
                 )}
+
                 <button
-                    className="bg-rose-500 p-2 rounded-lg uppercase text-white font-bold text-sm"
-                    onClick={() => handleModalEliminarTarea(tarea)}
-                >Eliminar</button>
+                    className={ `${estado ? 'bg-green-500' : 'bg-slate-500'} p-2 rounded-lg uppercase text-white font-bold text-sm`}
+                    onClick={() => completarTarea(_id)}
+                >{estado ? 'Completa' : 'Incompleta'}</button>
+
+                {admin && (
+                    <button
+                        type="button"
+                        className="bg-rose-500 p-2 rounded-lg uppercase text-white font-bold text-sm"
+                        onClick={() => handleModalEliminarTarea(tarea)}
+                    >Eliminar</button>
+                )}
             </div>
 
         </div>

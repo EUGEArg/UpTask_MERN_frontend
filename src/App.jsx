@@ -12,6 +12,7 @@ import Proyectos from './paginas/Proyectos'
 import NuevoProyecto from './paginas/NuevoProyecto'
 import Proyecto from './paginas/Proyecto'
 import EditarProyecto from './paginas/EditarProyecto'
+import NuevoColaborador from './paginas/NuevoColaborador'
 
 import { AuthProvider } from './context/AuthProvider'
 import { ProyectosProvider } from './context/ProyectosProvider'
@@ -33,6 +34,7 @@ function App() {
 						<Route path='/proyectos' element={<RutaProtegida />}>{/* Parte Privada */}
 							<Route index element={<Proyectos />} />
 							<Route path='crear-proyecto' element={<NuevoProyecto />} />
+							<Route path='nuevo-colaborador/:id' element={<NuevoColaborador />} />
 							<Route path=':id' element={<Proyecto />}/>
 							<Route path='editar/:id' element={<EditarProyecto />}/>
 						</Route>
