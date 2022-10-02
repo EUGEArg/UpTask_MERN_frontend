@@ -14,8 +14,8 @@ import Proyecto from './paginas/Proyecto'
 import EditarProyecto from './paginas/EditarProyecto'
 import NuevoColaborador from './paginas/NuevoColaborador'
 
-import { AuthProvider } from './context/AuthProvider'
-import { ProyectosProvider } from './context/ProyectosProvider'
+import {AuthProvider} from './context/AuthProvider'
+import {ProyectosProvider} from './context/ProyectosProvider'
 
 function App() {
 	return (
@@ -23,7 +23,8 @@ function App() {
 			<AuthProvider>
 				<ProyectosProvider>
 					<Routes>
-						<Route path='/' element={<AuthLayout />}>{/* Parte Pública */}
+						{/* Sección Pública */}
+						<Route path='/' element={<AuthLayout />}>
 							<Route index element={<Login />} />
 							<Route path='registrar' element={<Registrar />} />
 							<Route path='olvide-password' element={<OlvidePassword />} />
@@ -31,7 +32,8 @@ function App() {
 							<Route path='confirmar/:id' element={<ConfirmarCuenta />} />
 						</Route>
 
-						<Route path='/proyectos' element={<RutaProtegida />}>{/* Parte Privada */}
+						{/* Sección Privada */}
+						<Route path='/proyectos' element={<RutaProtegida />}>
 							<Route index element={<Proyectos />} />
 							<Route path='crear-proyecto' element={<NuevoProyecto />} />
 							<Route path='nuevo-colaborador/:id' element={<NuevoColaborador />} />

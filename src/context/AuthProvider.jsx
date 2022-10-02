@@ -42,6 +42,10 @@ const AuthProvider = ({ children }) => {
         autenticarUsuario()
     },[]) //Se ejecuta una sola vez para comprobar si hay un token
 
+//-----------------------------------------------Cerrar Sesión-----------------------------------------------
+const cerrarSesionAuth = () => {
+    setAuth({})
+} 
 
     return (
         <AuthContext.Provider
@@ -49,7 +53,7 @@ const AuthProvider = ({ children }) => {
                 auth,
                 setAuth,
                 cargando,
-
+                cerrarSesionAuth
             }}
         >
             {children}
